@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-function CreateUser() {
+function CreateUser(props) {
   const [name,setname]=useState({
     username:''
   })
@@ -17,11 +17,11 @@ function CreateUser() {
       axios.post('http://localhost:3000/user/add',newName).then(res => console.log(res.data)).catch((err) => {
       console.log(err.message);   
     });
-      // window.location = '/'
+      window.location = '/create'
     }
   
   return (
-<div>
+<div className='container'>
         <h3>Create New User</h3>
         <form>
           <div className="form-group"> 
